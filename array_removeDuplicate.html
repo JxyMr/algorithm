@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组去重方法</title>
+</head>
+<body>
+	<script>
+		//1
+		function unique1(arr) {
+			var newArr = [arr[0]];
+			for(var i=1;i<arr.length;i++){
+				var repeat = false;
+				for(var j=0;j<newArr.length;j++){
+					if(newArr[j]==arr[i]){
+						repeat = true;
+						break;
+					}
+				}
+				if(!repeat){
+					newArr.push(arr[i]);	
+				}
+			}
+			console.log(newArr);
+		}
+		//2
+		function unique2(arr){
+			arr.sort();
+			var newArr = [arr[0]];
+			for(var i=1;i<arr.length;i++){
+				if(newArr[newArr.length-1]!==arr[i]){
+					newArr.push(arr[i]);
+				}
+			}
+			console.log(newArr)
+		}
+		//
+		unique2([1,2,3,4,4,5,6,6,7,2,3]);
+	</script>
+</body>
+</html>

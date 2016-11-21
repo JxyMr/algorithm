@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>判断字符串中出现次数最多的</title>
+</head>
+<body>
+	<script>
+		function strMore(str){
+			var strObj = {},
+				i = 0,
+				len = str.length;
+			for(;i<len;i++){
+				if(!strObj[str[i]]){
+					strObj[str[i]] = 1
+				}else{
+					strObj[str[i]]+=1
+				}
+			}
+			var max = 0,
+					str1;	
+			for(var n in strObj){
+				if(strObj[n]>max){
+					max = strObj[n];
+					str1 = n;
+				}
+			}
+			console.log(max,str1)
+		}
+		strMore("qwewqrqweqwrtrtrtqewwqe");
+	</script>
+</body>
+</html>

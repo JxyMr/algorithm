@@ -34,8 +34,69 @@
 			}
 			console.log(newArr)
 		}
-		//
-		unique2([1,2,3,4,4,5,6,6,7,2,3]);
+		//3
+		function unique3(arr) {
+			var newArr=[];
+			for(var i=0;i<arr.length;i++){
+				if(newArr.indexOf(arr[i])==-1){
+					newArr.push(arr[i]);
+				}
+			}
+			console.log(newArr)
+		}
+		unique3([1,2,3,4,4,5,6,6,7,2,3]);
+	</script>
+	<script>
+		function unique11(arr){
+			var newArr = [arr[0]],
+				repeat;
+			for(var i=1;i<arr.length;i++){
+				repeat=false;
+				for(var j=0;j<newArr.length;j++){
+					if(newArr[j]===arr[i]){
+						repeat = true;
+						break;
+					}
+				}
+				if(!repeat){
+					newArr.push(arr[i]);
+				}
+			}
+			console.log(newArr);
+		}
+		unique11([1,2,3,4,5,6,7,2,23,3,3,1,4,5,1,5])
+		function unique21(arr){
+			arr.sort();
+			var newArr=[arr[0]];
+			for(var i=1;i<arr.length;i++){
+				if(newArr[newArr.length-1]!==arr[i]){
+					newArr.push(arr[i]);
+				}
+			}
+			console.log(arr)
+		}
+		unique21([1,2,3,4,5,6,7,2,23,3,3,1,4,5,1,5])
+	</script>
+	<script>
+	//字符串中出现次数最多的字符和次数
+		String.prototype.strMore=function(){
+			var strObj={},
+				max,num=0;
+			for(var i=0;i<this.length;i++){
+				if(!strObj[this[i]]){
+					strObj[this[i]]=1;
+				}else{
+					strObj[this[i]]++;
+				}
+				if(strObj[this[i]]>num){
+					max=this[i];
+					num=strObj[this[i]];
+				}
+			}
+			console.log(max,num);
+
+		}
+		"qwqeqwewqewertyuiiq".strMore();
 	</script>
 </body>
 </html>
